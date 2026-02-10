@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Applicant Status Dashboard - Miss Wellness World</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a5239",
+                        "wellness-gold": "#ca8a04",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#11211b",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-[#0e1b16] dark:text-gray-100 antialiased overflow-hidden">
+    <div class="flex h-screen w-full">
+        <!-- SideNavBar -->
+        <aside class="hidden w-72 flex-col bg-primary text-white md:flex overflow-y-auto shrink-0 shadow-xl z-20">
+            <!-- Brand -->
+            <div class="px-6 py-8">
+                <div class="flex items-center gap-3 mb-8">
+                    <div
+                        class="size-10 rounded-full bg-white/10 flex items-center justify-center text-wellness-gold backdrop-blur-sm">
+                        <span class="material-symbols-outlined icon-filled">spa</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-tight tracking-tight">Miss Wellness World</h1>
+                        <p class="text-xs text-white/60 font-medium tracking-wide uppercase">Applicant Portal 2026</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation -->
+            <nav class="flex-1 flex flex-col gap-2 px-4">
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 text-white font-medium border-l-4 border-wellness-gold transition-all"
+                    href="#">
+                    <span class="material-symbols-outlined text-[24px]">dashboard</span>
+                    Overview
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/5 hover:text-white font-medium border-l-4 border-transparent hover:border-white/30 transition-all"
+                    href="#">
+                    <span class="material-symbols-outlined text-[24px]">person</span>
+                    Profile
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/5 hover:text-white font-medium border-l-4 border-transparent hover:border-white/30 transition-all"
+                    href="#">
+                    <span class="material-symbols-outlined text-[24px]">description</span>
+                    My Application
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/5 hover:text-white font-medium border-l-4 border-transparent hover:border-white/30 transition-all"
+                    href="#">
+                    <span class="material-symbols-outlined text-[24px]">local_library</span>
+                    Wellness Resources
+                </a>
+                <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-white/70 hover:bg-white/5 hover:text-white font-medium border-l-4 border-transparent hover:border-white/30 transition-all"
+                    href="#">
+                    <span class="material-symbols-outlined text-[24px]">settings</span>
+                    Settings
+                </a>
+            </nav>
+            <!-- User/Logout -->
+            <div class="p-6 mt-auto">
+                <div class="flex items-center gap-3 px-4 py-4 rounded-xl bg-[#084430] border border-[#0d5c41]">
+                    <div class="size-10 rounded-full bg-cover bg-center border-2 border-wellness-gold"
+                        data-alt="Profile picture of Sarah"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0UUA17MKpM-7EjpDM3XmasLVFdpagvYMT7_OkmEExgxvhIegkmqdpGQ3ZASlb4f7x1HBf3j0HFqml2iyRjYF3WkhMw6UNHkYg_TopjjfS85fu8n5Q3_ViAgWEvSadykqUphp1cRAfnnbA2fFiXbRfhZTFlQedDLovbakChiPfUZYz4ZweW6rKHndKvD08O4EO-VBtEESOALsvdt10HNH696Sm6HqttNz4v7Rr14IfNiSPaXSs2mYzR96UOPW39TECp3ay245Rtsk');">
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm font-bold text-white truncate">Sarah Jenkins</p>
+                        <p class="text-xs text-white/50 truncate">ID: MWW-2026-892</p>
+                    </div>
+                    <button class="text-white/50 hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-[20px]">logout</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="flex-1 flex flex-col h-full overflow-y-auto bg-background-light dark:bg-background-dark relative">
+            <!-- Mobile Header -->
+            <header
+                class="md:hidden sticky top-0 z-30 flex items-center justify-between p-4 bg-primary text-white shadow-md">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined">spa</span>
+                    <span class="font-bold">Miss Wellness World</span>
+                </div>
+                <button><span class="material-symbols-outlined">menu</span></button>
+            </header>
+            <div class="p-6 md:p-10 lg:p-14 max-w-[1400px] mx-auto w-full flex flex-col gap-8">
+                <!-- PageHeading -->
+                <div class="flex flex-col gap-2 animate-fade-in-up">
+                    <h2
+                        class="text-3xl md:text-4xl font-black text-[#0e1b16] dark:text-white leading-tight tracking-[-0.033em]">
+                        Welcome, Sarah <span class="text-wellness-gold">—</span> Your Wellness Journey Begins</h2>
+                    <p class="text-primary/80 dark:text-gray-400 text-lg font-normal leading-normal max-w-2xl">Manage
+                        your application status, complete pending tasks, and access your exclusive preparation
+                        materials.</p>
+                </div>
+                <!-- Status Card -->
+                <div
+                    class="bg-white dark:bg-[#1a2c24] rounded-2xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 dark:border-gray-800 flex flex-col lg:flex-row gap-8 items-stretch">
+                    <!-- Image -->
+                    <div class="w-full lg:w-1/3 aspect-video lg:aspect-auto rounded-xl bg-cover bg-center relative overflow-hidden group"
+                        data-alt="Serene woman practicing yoga outdoors in nature"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBy2uLDcWQ4zceAgOyT5PPj-IcUdCKkH4OiXCOzVpgjiyd2NExKufNtiWQr2zOFv58kkipFrb5lesk8WxL4Iq5ksiGXGDU95A8K3zDcSyE127jPpSS1vA1ukwJtvddwmWwutfqmzviEMeobzt-mGO5OI6idkzgYJk23OAea9LxFqje2RTCQ69-sg_ods3VSNHonkfRP1yMyStAZK5c4ofHk41mWIyNkB_-o6iweHoAncLx9SlsujUwD0FP_FsmkxmGFMdYD_tSJs1Y');">
+                        <div
+                            class="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors duration-500">
+                        </div>
+                    </div>
+                    <!-- Status Content -->
+                    <div class="flex-1 flex flex-col justify-center gap-5 py-2">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span
+                                    class="inline-block px-3 py-1 rounded-full bg-wellness-gold/10 text-wellness-gold text-xs font-bold uppercase tracking-wider mb-2 border border-wellness-gold/20">Phase
+                                    2 of 4</span>
+                                <h3 class="text-2xl font-bold text-[#0e1b16] dark:text-white tracking-tight">Application
+                                    Status: Under Review</h3>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-3xl font-black text-primary dark:text-white">35%</span>
+                                <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Completed</span>
+                            </div>
+                        </div>
+                        <!-- ProgressBar Component Integrated -->
+                        <div class="flex flex-col gap-2">
+                            <div class="w-full bg-[#e8f3ef] dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                                <div class="bg-wellness-gold h-3 rounded-full shadow-[0_0_10px_rgba(202,138,4,0.4)]"
+                                    style="width: 35%"></div>
+                            </div>
+                            <div class="flex justify-between text-xs font-medium text-gray-400">
+                                <span>Submission</span>
+                                <span class="text-primary dark:text-wellness-gold">Review</span>
+                                <span>Interview</span>
+                                <span>Finalist</span>
+                            </div>
+                        </div>
+                        <div class="bg-[#f8fbfa] dark:bg-black/20 p-4 rounded-lg border-l-4 border-primary">
+                            <p class="text-[#4f967d] dark:text-gray-300 text-sm font-normal leading-relaxed">
+                                Your application is currently being reviewed by our panel. We verify all wellness
+                                certifications and personal statements. This process typically takes 5-7 business days.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Two Column Layout for Actions & Timeline -->
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                    <!-- Quick Actions Grid -->
+                    <div class="xl:col-span-2 flex flex-col gap-6">
+                        <div class="flex items-center gap-2 px-1">
+                            <span class="material-symbols-outlined text-primary dark:text-wellness-gold">bolt</span>
+                            <h3 class="text-xl font-bold text-[#0e1b16] dark:text-white">Quick Actions</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <!-- Card 1: Profile -->
+                            <div
+                                class="bg-white dark:bg-[#1a2c24] p-6 rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div
+                                        class="size-12 rounded-xl bg-green-50 dark:bg-white/5 flex items-center justify-center text-primary dark:text-green-400 group-hover:bg-primary group-hover:text-white transition-colors">
+                                        <span class="material-symbols-outlined">favorite</span>
+                                    </div>
+                                    <span
+                                        class="bg-red-50 text-red-600 dark:bg-red-900/20 dark:text-red-300 text-[10px] px-2 py-1 rounded-full font-bold border border-red-100 dark:border-red-900/30">ACTION
+                                        REQUIRED</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-[#0e1b16] dark:text-white mb-2">Complete Wellness
+                                    Profile</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">Please update
+                                    your health philosophy and dietary preferences to proceed.</p>
+                                <button
+                                    class="text-primary dark:text-wellness-gold text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+                                    Edit Profile <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </button>
+                            </div>
+                            <!-- Card 2: Interview -->
+                            <div
+                                class="bg-white dark:bg-[#1a2c24] p-6 rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div
+                                        class="size-12 rounded-xl bg-green-50 dark:bg-white/5 flex items-center justify-center text-primary dark:text-green-400 group-hover:bg-primary group-hover:text-white transition-colors">
+                                        <span class="material-symbols-outlined">calendar_clock</span>
+                                    </div>
+                                    <span
+                                        class="bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300 text-[10px] px-2 py-1 rounded-full font-bold">PENDING</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-[#0e1b16] dark:text-white mb-2">Upcoming Interview
+                                    Date</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">Your regional
+                                    interview slot is currently being scheduled by our coordinators.</p>
+                                <button class="text-gray-400 text-sm font-bold flex items-center gap-2 cursor-default">
+                                    Details Coming Soon
+                                </button>
+                            </div>
+                            <!-- Card 3: Resources (Full Width) -->
+                            <div
+                                class="md:col-span-2 bg-white dark:bg-[#1a2c24] p-6 rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100 dark:border-gray-800">
+                                <div class="flex items-center justify-between mb-6">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="size-12 rounded-xl bg-green-50 dark:bg-white/5 flex items-center justify-center text-primary dark:text-green-400">
+                                            <span class="material-symbols-outlined">school</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-lg font-bold text-[#0e1b16] dark:text-white">Preparation
+                                                Materials</h4>
+                                            <p class="text-sm text-gray-500 dark:text-gray-400">Exclusive guides for
+                                                applicants</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-sm text-primary font-medium hover:underline">View All</button>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <!-- Resource Item 1 -->
+                                    <div
+                                        class="flex items-center p-3 rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-white/5 hover:border-primary/30 hover:bg-white dark:hover:bg-[#20362c] transition-all cursor-pointer group">
+                                        <div
+                                            class="size-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center shrink-0">
+                                            <span class="material-symbols-outlined">picture_as_pdf</span>
+                                        </div>
+                                        <div class="ml-3 flex-1 min-w-0">
+                                            <p
+                                                class="text-sm font-bold text-gray-800 dark:text-gray-200 truncate group-hover:text-primary transition-colors">
+                                                Energy Healing 101</p>
+                                            <p class="text-xs text-gray-500">PDF • 2.4 MB</p>
+                                        </div>
+                                        <span
+                                            class="material-symbols-outlined text-gray-400 group-hover:text-primary mr-1">download</span>
+                                    </div>
+                                    <!-- Resource Item 2 -->
+                                    <div
+                                        class="flex items-center p-3 rounded-xl border border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-white/5 hover:border-primary/30 hover:bg-white dark:hover:bg-[#20362c] transition-all cursor-pointer group">
+                                        <div
+                                            class="size-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center shrink-0">
+                                            <span class="material-symbols-outlined">picture_as_pdf</span>
+                                        </div>
+                                        <div class="ml-3 flex-1 min-w-0">
+                                            <p
+                                                class="text-sm font-bold text-gray-800 dark:text-gray-200 truncate group-hover:text-primary transition-colors">
+                                                Public Speaking Tips</p>
+                                            <p class="text-xs text-gray-500">PDF • 1.8 MB</p>
+                                        </div>
+                                        <span
+                                            class="material-symbols-outlined text-gray-400 group-hover:text-primary mr-1">download</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Timeline Widget -->
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-2 px-1">
+                            <span class="material-symbols-outlined text-primary dark:text-wellness-gold">schedule</span>
+                            <h3 class="text-xl font-bold text-[#0e1b16] dark:text-white">Upcoming Deadlines</h3>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-[#1a2c24] p-6 rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 h-full flex flex-col">
+                            <div class="relative pl-2 flex-1">
+                                <!-- Vertical Line -->
+                                <div class="absolute left-[11px] top-2 bottom-2 w-[2px] bg-gray-100 dark:bg-gray-700">
+                                </div>
+                                <div class="space-y-8">
+                                    <!-- Timeline Item 1 -->
+                                    <div class="relative pl-10 group">
+                                        <div
+                                            class="absolute left-0 top-1 size-6 rounded-full border-4 border-white dark:border-[#1a2c24] bg-primary z-10 shadow-sm">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-[10px] font-bold text-primary dark:text-green-400 tracking-wider uppercase mb-1">Completed</span>
+                                            <h5
+                                                class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                                                Application Deadline</h5>
+                                            <p class="text-xs text-gray-500 mt-0.5">Oct 15, 2025</p>
+                                        </div>
+                                    </div>
+                                    <!-- Timeline Item 2 -->
+                                    <div class="relative pl-10 group">
+                                        <div
+                                            class="absolute left-0 top-1 size-6 rounded-full border-4 border-white dark:border-[#1a2c24] bg-wellness-gold z-10 shadow-[0_0_10px_rgba(202,138,4,0.3)] animate-pulse">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-[10px] font-bold text-wellness-gold tracking-wider uppercase mb-1">Upcoming</span>
+                                            <h5
+                                                class="text-sm font-bold text-gray-900 dark:text-white group-hover:text-wellness-gold transition-colors">
+                                                Video Submission Due</h5>
+                                            <p class="text-xs text-gray-500 mt-0.5">Nov 01, 2025</p>
+                                            <div
+                                                class="mt-2 p-2 bg-yellow-50 dark:bg-yellow-900/10 rounded border border-yellow-100 dark:border-yellow-900/30 text-xs text-yellow-800 dark:text-yellow-200">
+                                                Reminder: 2 min max intro video
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Timeline Item 3 -->
+                                    <div class="relative pl-10 opacity-60">
+                                        <div
+                                            class="absolute left-0 top-1 size-6 rounded-full border-4 border-white dark:border-[#1a2c24] bg-gray-300 dark:bg-gray-600 z-10">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-1">Locked</span>
+                                            <h5 class="text-sm font-bold text-gray-900 dark:text-white">Regional
+                                                Interviews</h5>
+                                            <p class="text-xs text-gray-500 mt-0.5">Nov 20, 2025</p>
+                                        </div>
+                                    </div>
+                                    <!-- Timeline Item 4 -->
+                                    <div class="relative pl-10 opacity-60">
+                                        <div
+                                            class="absolute left-0 top-1 size-6 rounded-full border-4 border-white dark:border-[#1a2c24] bg-gray-300 dark:bg-gray-600 z-10">
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-[10px] font-bold text-gray-400 tracking-wider uppercase mb-1">Locked</span>
+                                            <h5 class="text-sm font-bold text-gray-900 dark:text-white">Final Selection
+                                            </h5>
+                                            <p class="text-xs text-gray-500 mt-0.5">Dec 15, 2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800">
+                                <button
+                                    class="w-full py-2 text-xs font-bold text-primary dark:text-green-400 bg-primary/5 dark:bg-white/5 rounded-lg hover:bg-primary hover:text-white transition-colors">
+                                    Sync to Calendar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative Abstract Background Element -->
+            <div
+                class="absolute top-0 right-0 w-1/3 h-96 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none rounded-bl-[100px] z-0">
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
