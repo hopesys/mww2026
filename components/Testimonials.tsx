@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Section } from '@/components/ui/Section';
+import { Section } from '@/components/layout/Section';
 
 const testimonials = [
     {

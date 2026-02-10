@@ -1,6 +1,6 @@
 'use client';
 
-import { Section } from '@/components/ui/Section';
+import { Section } from '@/components/layout/Section';
 
 export default function HallOfFameGeneral() {
   return (

@@ -4,9 +4,8 @@ import { useState } from 'react';
 import { supabase, type MwwApplication } from '@/lib/supabase';
 import { applicationSchema } from '@/schemas/application';
 import { uploadFile } from '@/lib/upload';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/Button';
+import { Header, Footer } from '@/components/layout';
+import { Button } from '@/components/ui/button';
 
 const initialForm: Omit<MwwApplication, 'id' | 'created_at' | 'updated_at'> = {
   name_th: '',

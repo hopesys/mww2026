@@ -26,6 +26,14 @@
 | **Payment Gateway** | **Omise (Opn Payments)** | รองรับ PromptPay QR และบัตรเครดิต ตัดเงินอัตโนมัติ เหมาะกับผู้ใช้งานคนไทย |
 | **Email Service** | **Resend** | ส่งอีเมลยืนยันการสมัครพร้อมแนบ PDF เข้า Inbox ได้อย่างน่าเชื่อถือ (ไม่ตก Junk) |
 | **PDF Generation** | **@react-pdf/renderer** | สร้างไฟล์ PDF ใบสมัครสวยงามด้วย React Component เพื่อส่งให้ผู้สมัครและกรรมการ |
+| **UI Components** | **shadcn/ui (Tailwind v4)** | คอมโพเนนต์แบบ copy-paste (Button, Input, Label, Card) ใช้ธีม Neutral + สี Wellness (เขียว/ทอง) |
+
+### โครงสร้างโปรเจกต์ (Next.js 16 App Router)
+
+- **Route groups:** `app/(marketing)/` สำหรับหน้าแรก (layout ร่วม Header/Footer/BackToTop), `app/apply/`, `app/admin/`
+- **Layouts:** แต่ละกลุ่มมี `layout.tsx` สำหรับ metadata และ wrapper
+- **Components:** `components/layout/` (Header, Footer, Section, BackToTop), `components/ui/` (shadcn: button, input, label, card), `components/about/`, `components/halloffame/`, `components/application/`, `components/admin/`, `components/pdf/`
+- **เพิ่มคอมโพเนนต์ shadcn:** `npx shadcn@canary add <ชื่อ>` (ใช้ canary สำหรับ Tailwind v4)
 
 ## **3\. สถาปัตยกรรมระบบ (System Architecture)**
 

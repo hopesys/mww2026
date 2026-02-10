@@ -1,6 +1,3 @@
-'use client';
-
-import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import ExecutiveTeam from '@/components/about/ExecutiveTeam';
 import AboutMWW from '@/components/about/AboutMWW';
@@ -11,13 +8,10 @@ import HallOfFameMWWT2024 from '@/components/halloffame/HallOfFameMWWT2024';
 import HallOfFameMWWT2025 from '@/components/halloffame/HallOfFameMWWT2025';
 import Testimonials from '@/components/Testimonials';
 import ContactSection from '@/components/ContactSection';
-import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-wellness-light">
-      <Header />
       <HeroSection />
 
       {/* About Sections */}
@@ -36,9 +30,6 @@ export default function Home() {
 
       {/* Contact */}
       <ContactSection />
-
-      <Footer />
-      <BackToTop />
     </main>
   );
 }

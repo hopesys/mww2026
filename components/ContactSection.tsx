@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Section } from '@/components/ui/Section';
+import { Section } from '@/components/layout/Section';
 
 export default function ContactSection() {
     return (

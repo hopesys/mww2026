@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 
 const ADMIN_COOKIE = 'mwwt_admin';
 
@@ -41,7 +41,7 @@ export default function AdminLoginPage() {
           autoFocus
         />
         {error && <p className="text-sm text-red-600 mb-4">{error}</p>}
-        <Button type="submit" fullWidth>
+        <Button type="submit" className="w-full">
           เข้าสู่ระบบ
         </Button>
       </form>

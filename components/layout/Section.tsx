@@ -18,4 +18,3 @@ export function Section({ id, className = '', children }: SectionProps) {
     </section>
   );
 }
-

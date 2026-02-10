@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -183,7 +183,7 @@ export default function Header() {
               </button>
             ))}
             <Link href="/apply" className="mt-2 block">
-              <Button fullWidth>Apply Now</Button>
+              <Button className="w-full">Apply Now</Button>
             </Link>
           </div>
         )}
@@ -191,4 +191,3 @@ export default function Header() {
     </header>
   );
 }
-
