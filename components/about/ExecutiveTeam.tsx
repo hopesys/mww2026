@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { Section } from '@/components/ui/Section';
 
 const executives = [
     {
@@ -34,46 +35,46 @@ const executives = [
 ];
 
 export default function ExecutiveTeam() {
-    return (
-        <div className="section-padding bg-white">
-            <div className="container mx-auto max-w-7xl">
-                <h2 className="text-4xl md:text-5xl font-bold text-center text-wellness-green mb-4 fade-in-up">
-                    Our Executive Team
-                </h2>
-                <p className="text-center text-wellness-text mb-16 max-w-2xl mx-auto fade-in-up">
-                    Meet the visionary leaders behind Miss Wellness World
-                </p>
+  return (
+    <Section id="about" className="bg-white">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold text-wellness-green mb-3 fade-in-up">
+          Our Executive Team
+        </h2>
+        <p className="text-base md:text-lg text-wellness-text max-w-2xl mx-auto fade-in-up">
+          Meet the visionary leaders behind Miss Wellness World
+        </p>
+      </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {executives.map((exec, index) => (
-                        <div
-                            key={index}
-                            className="fade-in-scale text-center group"
-                        >
-                            <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-wellness-gold shadow-lg group-hover:scale-105 transition-transform duration-300">
-                                <Image
-                                    src={exec.image}
-                                    alt={exec.name}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                            <h3 className="text-xl font-bold text-wellness-green mb-2">
-                                {exec.name}
-                            </h3>
-                            <p className="text-wellness-gold font-semibold mb-1">
-                                {exec.title}
-                            </p>
-                            <p className="text-sm text-wellness-text/70 mb-3 font-medium">
-                                {exec.subtitle}
-                            </p>
-                            <p className="text-sm text-wellness-text/80">
-                                {exec.description}
-                            </p>
-                        </div>
-                    ))}
-                </div>
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-4">
+        {executives.map((exec, index) => (
+          <div
+            key={index}
+            className="fade-in-scale group flex flex-col items-center text-center md:items-start md:text-left"
+          >
+            <div className="relative mb-5 h-40 w-40 overflow-hidden rounded-full border-4 border-wellness-gold shadow-lg transition-transform duration-300 group-hover:scale-105">
+              <Image
+                src={exec.image}
+                alt={exec.name}
+                fill
+                className="object-cover"
+              />
             </div>
-        </div>
-    );
+            <h3 className="mb-1 text-lg font-bold text-wellness-green md:text-xl">
+              {exec.name}
+            </h3>
+            <p className="mb-1 text-sm font-semibold text-wellness-gold md:text-base">
+              {exec.title}
+            </p>
+            <p className="mb-2 text-xs font-medium text-wellness-text/70 md:text-sm">
+              {exec.subtitle}
+            </p>
+            <p className="text-xs text-wellness-text/80 md:text-sm">
+              {exec.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
 }

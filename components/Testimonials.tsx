@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { Section } from '@/components/ui/Section';
 
 const testimonials = [
     {
@@ -24,43 +25,41 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-    return (
-        <div className="section-padding bg-wellness-green text-white">
-            <div className="container mx-auto max-w-7xl">
-                <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 fade-in-up">
-                    Voices of the Journey
-                </h2>
-                <p className="text-center text-white/90 mb-16 max-w-2xl mx-auto fade-in-up">
-                    Miss Wellness World & Miss Wellness World Thailand
-                </p>
+  return (
+    <Section className="bg-wellness-green text-white">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 fade-in-up">
+        Voices of the Journey
+      </h2>
+      <p className="text-center text-white/90 mb-16 max-w-2xl mx-auto fade-in-up">
+        Miss Wellness World &amp; Miss Wellness World Thailand
+      </p>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {testimonials.map((testimonial, index) => (
-                        <div
-                            key={index}
-                            className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all fade-in-scale"
-                        >
-                            <div className="flex items-center mb-4">
-                                <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 border-2 border-wellness-gold">
-                                    <Image
-                                        src={testimonial.image}
-                                        alt={testimonial.name}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-white">{testimonial.name}</h4>
-                                    <p className="text-wellness-gold text-sm">{testimonial.title}</p>
-                                </div>
-                            </div>
-                            <blockquote className="text-white/90 italic text-sm leading-relaxed">
-                                "{testimonial.quote}"
-                            </blockquote>
-                        </div>
-                    ))}
-                </div>
+      <div className="grid gap-8 md:grid-cols-3">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="fade-in-scale rounded-lg bg-white/10 p-6 backdrop-blur-sm transition-all hover:bg-white/20"
+          >
+            <div className="mb-4 flex items-center">
+              <div className="relative mr-4 h-16 w-16 overflow-hidden rounded-full border-2 border-wellness-gold">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h4 className="font-bold text-white">{testimonial.name}</h4>
+                <p className="text-sm text-wellness-gold">{testimonial.title}</p>
+              </div>
             </div>
-        </div>
-    );
+            <blockquote className="text-sm italic leading-relaxed text-white/90">
+              “{testimonial.quote}”
+            </blockquote>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
 }

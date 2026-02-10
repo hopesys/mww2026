@@ -16,32 +16,26 @@ import BackToTop from '@/components/BackToTop';
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-wellness-light">
       <Header />
       <HeroSection />
 
       {/* About Sections */}
-      <section id="about" className="bg-white">
-        <ExecutiveTeam />
-        <AboutMWW />
-        <AboutMWWT />
-      </section>
+      <ExecutiveTeam />
+      <AboutMWW />
+      <AboutMWWT />
 
       {/* Hall of Fame Sections */}
-      <section id="hall-of-fame" className="bg-wellness-light">
-        <HallOfFameGeneral />
-        <HallOfFameMWW />
-        <HallOfFameMWWT2024 />
-        <HallOfFameMWWT2025 />
-      </section>
+      <HallOfFameGeneral />
+      <HallOfFameMWW />
+      <HallOfFameMWWT2024 />
+      <HallOfFameMWWT2025 />
 
       {/* Testimonials */}
       <Testimonials />
 
       {/* Contact */}
-      <section id="contact">
-        <ContactSection />
-      </section>
+      <ContactSection />
 
       <Footer />
       <BackToTop />

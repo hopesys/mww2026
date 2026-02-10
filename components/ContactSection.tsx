@@ -1,9 +1,11 @@
 'use client';
 
+import Link from 'next/link';
+import { Section } from '@/components/ui/Section';
+
 export default function ContactSection() {
     return (
-        <div className="section-padding bg-white">
-            <div className="container mx-auto max-w-4xl">
+        <Section id="contact" className="bg-white">
                 <h2 className="text-4xl md:text-5xl font-bold text-center text-wellness-green mb-4 fade-in-up">
                     CONTACT US
                 </h2>
@@ -94,15 +96,14 @@ export default function ContactSection() {
                         <p className="text-wellness-text mb-6">
                             Are you ready to become a wellness ambassador? Apply now for Miss Wellness World 2026!
                         </p>
-                        <button className="w-full px-8 py-4 bg-wellness-gold text-white font-semibold rounded-full hover:bg-opacity-90 transition-all hover:scale-105 mb-4">
+                        <Link href="/apply" className="block w-full px-8 py-4 bg-wellness-gold text-white font-semibold rounded-full hover:opacity-90 transition-all hover:scale-105 mb-4 text-center">
                             Apply for MWW 2026
-                        </button>
-                        <button className="w-full px-8 py-4 bg-wellness-green text-white font-semibold rounded-full hover:bg-opacity-90 transition-all hover:scale-105">
+                        </Link>
+                        <Link href="/apply" className="block w-full px-8 py-4 bg-wellness-green text-white font-semibold rounded-full hover:bg-opacity-90 transition-all hover:scale-105 text-center">
                             Apply for MWWT 2026
-                        </button>
+                        </Link>
                     </div>
                 </div>
-            </div>
-        </div>
+        </Section>
     );
 }

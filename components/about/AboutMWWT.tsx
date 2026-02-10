@@ -1,21 +1,21 @@
 'use client';
 
 import Image from 'next/image';
+import { Section } from '@/components/ui/Section';
 
 export default function AboutMWWT() {
-    return (
-        <div className="section-padding bg-white">
-            <div className="container mx-auto max-w-6xl">
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-bold text-wellness-green mb-4 fade-in-up">
-                        Miss Wellness World Thailand
-                    </h2>
-                    <p className="text-2xl text-wellness-gold font-semibold mb-6 fade-in-up">
-                        Beauty with Wellness
-                    </p>
-                </div>
+  return (
+    <Section className="bg-white">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold text-wellness-green mb-4 fade-in-up">
+          Miss Wellness World Thailand
+        </h2>
+        <p className="text-2xl text-wellness-gold font-semibold mb-6 fade-in-up">
+          Beauty with Wellness
+        </p>
+      </div>
 
-                <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-12 items-center">
                     {/* Content */}
                     <div className="fade-in-left space-y-6">
                         <div className="bg-wellness-light p-6 rounded-lg">
@@ -78,7 +78,6 @@ export default function AboutMWWT() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </Section>
     );
 }
