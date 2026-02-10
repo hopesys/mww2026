@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MWW 2026
 
-## Getting Started
+Website for **Miss Wellness World** (MWW) — built with Next.js, React 19, and Tailwind CSS 4. Deploys to Vercel via GitHub Actions using Bun.
 
-First, run the development server:
+## Tech stack
+
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS 4**
+- **Bun** (package manager & runtime)
+
+## Prerequisites
+
+- [Bun](https://bun.sh) 1.x (recommended) or Node.js 20+
+
+## Getting started
+
+### Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
+```
+
+### Run development server
+
+```bash
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+bun run build
+```
 
-## Learn More
+### Start production server (local)
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+bun run start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Lint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+bun run lint
+```
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+├── app/                 # Next.js App Router
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/          # React components
+│   ├── about/           # About MWW, MWWT, Executive Team
+│   ├── halloffame/      # Hall of Fame sections
+│   ├── Header.tsx
+│   ├── HeroSection.tsx
+│   ├── Testimonials.tsx
+│   ├── ContactSection.tsx
+│   ├── Footer.tsx
+│   └── BackToTop.tsx
+├── public/              # Static assets (images, etc.)
+├── .github/workflows/   # CI/CD
+│   └── deploy-vercel.yml
+└── demo/                # Standalone HTML demos
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy to Vercel
+
+Deployment is automated with **GitHub Actions**. Pushing to `main` or running the workflow manually triggers a deploy.
+
+### 1. Add GitHub secrets
+
+In your repo: **Settings → Secrets and variables → Actions**, add:
+
+| Secret              | Where to get it |
+|---------------------|-----------------|
+| `VERCEL_TOKEN`      | [Vercel Account → Tokens](https://vercel.com/account/tokens) — create a token (e.g. “GitHub Actions”). |
+| `VERCEL_ORG_ID`     | Vercel project → **Settings → General** (or from `.vercel/project.json` after `vercel link`). |
+| `VERCEL_PROJECT_ID` | Same as above. |
+
+### 2. Link project (one-time, if needed)
+
+If the repo isn’t linked to a Vercel project yet:
+
+```bash
+bunx vercel link
+```
+
+Copy `orgId` and `projectId` from `.vercel/project.json` into the GitHub secrets above.
+
+### 3. Push to deploy
+
+```bash
+git push origin main
+```
+
+Workflow runs at: **Actions → Deploy to Vercel**.
+
+---
+
+[Next.js Docs](https://nextjs.org/docs) · [Vercel](https://vercel.com)
